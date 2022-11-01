@@ -44,7 +44,7 @@ public class VQT_BlockChain {
             sl = stock.nextInt();
         }
         stock.close();
-        //Khởi tạo giao dịch gốc, để chuyển 100 Coin đến ví A storeA
+      
         genesisTransaction = new Transaction(storebase.publicKey, storeA.publicKey, stockA, null);
         genesisTransaction.generateSignature(storebase.privateKey);	 //Gán private key (ký thủ công) vào giao dịch gốc
         genesisTransaction.transactionId = "0"; //Gán ID cho giao dịch gốc
@@ -52,7 +52,7 @@ public class VQT_BlockChain {
         UTXOs.put(genesisTransaction.outputs.get(0).id, genesisTransaction.outputs.get(0)); //Lưu giao dịch đầu tiên vào danh sách UTXOs.
 
         
-         //Khởi tạo giao dịch gốc, để chuyển 100 Coin đến ví A storeA
+        
          Transaction genesisTransaction2 = new Transaction(storebase.publicKey, storeB.publicKey, stockB, null);
          genesisTransaction2.generateSignature(storebase.privateKey);	 //Gán private key (ký thủ công) vào giao dịch gốc
          genesisTransaction2.transactionId = "0"; //Gán ID cho giao dịch gốc
@@ -64,7 +64,7 @@ public class VQT_BlockChain {
         genesis.addTransaction(genesisTransaction);
         genesis.addTransaction(genesisTransaction2);
         addBlock(genesis);
-        //Thử nghiệm
+  
         VNPT_Thang block1 = new VNPT_Thang(genesis.hash);
         System.out.println("\nSố lượng điện thoại trong kho A là : " + storeA.getBalance());
         System.out.println("\nSố lượng điện thoại trong kho B là : " + storeB.getBalance());
