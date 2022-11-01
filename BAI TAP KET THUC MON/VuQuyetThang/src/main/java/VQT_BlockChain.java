@@ -35,7 +35,7 @@ public class VQT_BlockChain {
 
         System.out.println("Nhập số lượng chuyển từ kho A sang kho B: ");  
         int sl = stock.nextInt();
-
+        stock.close();
         while (sl > stockA)
         {   System.out.println("Kho A không đủ số lượng điện thoại để chuyển: ");
             System.out.println("Nhập số lượng chuyển từ kho A sang kho B: ");  
